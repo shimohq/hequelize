@@ -1,6 +1,6 @@
 {
   "name": "hequelize",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "Simple HBase ORM based on hbase-rpc-client",
   "main": "index.js",
   "directories": {
