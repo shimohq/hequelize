@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const test = require('ava')
 const uuid = require('uuid/v4')
 const helper = require('./helper')
@@ -34,6 +33,5 @@ test('Get data correctly by class method', async t => {
   })
 
   const record = await hb.Test.tomGet(fileId)
-
   t.is(record['cf1:string'], value + fileId)
 })

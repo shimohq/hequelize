@@ -31,7 +31,6 @@ test.only('Get scan list correctly', async t => {
   t.is(results.length, 101)
 
   rowKeys.slice(0, 101).forEach((rowKey, index) => {
-    t.is(results[index].rowKey, rowKeys[index])
     t.is(results[index]['cf1:string'], 'tomtest' + index)
   })
 

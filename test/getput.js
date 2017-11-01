@@ -20,15 +20,11 @@ test('Get data correctly', async t => {
   const ret = await hb.Test.get(rowKey)
 
   t.true(_.isDate(ret['cf2:date']))
-
-  t.deepEqual(ret.toJSON(), {
-    rowKey,
-    data: {
-      'cf1:string': stringValue,
-      'cf2:date': dateValue,
-      'cf2:buffer': null,
-      'cf2:number': null
-    }
+  t.deepEqual(ret, {
+    'cf1:string': stringValue,
+    'cf2:date': dateValue,
+    'cf2:buffer': null,
+    'cf2:number': null
   })
 })
 
@@ -46,13 +42,10 @@ test('Replace a non-null value with null successfully', async t => {
   })
 
   const ret = await hb.Test.get(rowKey)
-  t.deepEqual(ret.toJSON(), {
-    rowKey,
-    data: {
-      'cf1:string': null,
-      'cf2:date': null,
-      'cf2:buffer': null,
-      'cf2:number': 123
-    }
+  t.deepEqual(ret, {
+    'cf1:string': null,
+    'cf2:date': null,
+    'cf2:buffer': null,
+    'cf2:number': 123
   })
 })

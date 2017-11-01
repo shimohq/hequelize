@@ -1,6 +1,6 @@
 const Hequelize = require('../lib/Hequelize')
 const hbase = new Hequelize({
-  zkHosts: 'localhost:2181'
+  zookeeperHosts: 'localhost:2181'
 })
 
 // hbase shell: create 'hbasetest', 'cf1', 'cf2'
