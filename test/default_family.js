@@ -30,6 +30,25 @@ test('Get data correctly', async t => {
   })
 })
 
+test('Get data correctly with columns options', async t => {
+  const rowKey = uuid()
+  const stringValue = uuid()
+  const dateValue = new Date()
+
+  const value = {
+    'string': stringValue,
+    'cf2:date': dateValue
+  }
+
+  await hb.Test.put(rowKey, value)
+
+  const ret = await hb.Test.get(rowKey, { columns: ['string'] })
+
+  t.deepEqual(ret, {
+    'string': stringValue
+  })
+})
+
 test('Get data correctly with full col name', async t => {
   const rowKey = uuid()
   const stringValue = uuid()
