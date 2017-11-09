@@ -1,6 +1,9 @@
 const Hequelize = require('../lib/Hequelize')
 const hbase = new Hequelize({
-  zookeeperHosts: 'localhost:2181'
+  zookeeperHosts: 'localhost:2181',
+  rpcTimeout: 60000,
+  callTimeout: 60000,
+  tcpNoDelay: true
 })
 
 // hbase shell: create 'hbasetest', 'cf1', 'cf2'
