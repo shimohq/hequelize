@@ -1,6 +1,6 @@
 const test = require('ava')
 const uuid = require('uuid/v4')
-const helper = require('./helper')
+const helper = require('./helpers')
 
 const hb = helper.createHb()
 
@@ -17,7 +17,11 @@ test('Delete row correctly', async t => {
   const ret = await hb.Test.get(rowKey)
   t.truthy(ret)
 
-  await hb.Test.destroy(rowKey)
+  const result = await hb.Test.destroy(rowKey)
+  t.true(typeof result === 'object' && result != null)
+  t.true(result.processed)
+  t.true(result.hasOwnProperty('result'))
+
   const ret2 = await hb.Test.get(rowKey)
   t.true(ret2 === null)
 })

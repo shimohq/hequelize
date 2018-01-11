@@ -2,7 +2,7 @@ const _ = require('lodash')
 const Bluebird = require('bluebird')
 const test = require('ava')
 const uuid = require('uuid/v4')
-const helper = require('./helper')
+const helper = require('./helpers')
 
 const hb = helper.createHb()
 
