@@ -2,11 +2,11 @@ const _ = require('lodash')
 const Bluebird = require('bluebird')
 const test = require('ava')
 const uuid = require('uuid/v4')
-const helper = require('./helper')
+const helper = require('./helpers')
 
 const hb = helper.createHb()
 
-test.only('Get scan list correctly', async t => {
+test('Get scan list correctly', async t => {
   const rowKeys = []
   const prefix = uuid()
   const limit = 101

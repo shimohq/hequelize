@@ -1,6 +1,6 @@
 const test = require('ava')
 const uuid = require('uuid/v4')
-const helper = require('./helper')
+const helper = require('./helpers')
 
 function reverse (str) {
   return str.split('').reverse().join('')

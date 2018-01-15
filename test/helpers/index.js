@@ -1,4 +1,4 @@
-const Hequelize = require('../lib/Hequelize')
+const Hequelize = require('../../lib/Hequelize')
 const hbase = new Hequelize({
   zookeeperHosts: 'localhost:2181',
   rpcTimeout: 60000,
